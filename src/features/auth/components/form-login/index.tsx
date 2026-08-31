@@ -68,10 +68,7 @@ export function FormLogin() {
         />
       )}
 
-      <Formik
-        initialValues={{ email: '', password: '' }}
-        onSubmit={handleSubmit}
-      >
+      <Formik initialValues={{ email: '', password: '' }} onSubmit={handleSubmit}>
         {({ isSubmitting, values }) => {
           const isFilled =
             values.email.trim().length > 0 &&
@@ -86,6 +83,7 @@ export function FormLogin() {
             >
               <div className="flex flex-col gap-6">
                 <InputForm
+                  floatingLabel
                   type="input"
                   name="email"
                   label="E-mail"
@@ -93,6 +91,7 @@ export function FormLogin() {
                 />
 
                 <InputPassword
+                  floatingLabel
                   name="password"
                   label="Senha"
                   invalid={hasError}

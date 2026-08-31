@@ -11,6 +11,7 @@ interface InputPasswordProps {
   invalid?: boolean;
   isRequired?: boolean;
   disabled?: boolean;
+  floatingLabel?: boolean;
 }
 
 export function InputPassword({
@@ -19,6 +20,7 @@ export function InputPassword({
   invalid = false,
   isRequired,
   disabled,
+  floatingLabel = false,
 }: InputPasswordProps) {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -39,6 +41,7 @@ export function InputPassword({
         invalid={invalid}
         isRequired={isRequired}
         disabled={disabled}
+        floatingLabel={floatingLabel}
       />
       <Eye
         aria-label={isVisible ? 'Ocultar senha' : 'Mostrar senha'}
