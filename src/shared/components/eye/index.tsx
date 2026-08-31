@@ -10,12 +10,11 @@ import { ComponentProps } from 'react';
 
 type EyeProps = ComponentProps<typeof Toggle>;
 
-export function Eye({ pressed, className, style, ...props }: EyeProps) {
+export function Eye({ pressed, className, ...props }: EyeProps) {
   return (
     <Toggle
       {...props}
       pressed={pressed}
-      style={{ top: '50%', transform: 'translateY(-50%)', ...style }}
       className={cn(
         'absolute outline-none p-0 z-[1] leading-none cursor-pointer text-gray-700 focus-visible:ring-2 focus-visible:ring-blue-400 bg-transparent border-none',
         className
