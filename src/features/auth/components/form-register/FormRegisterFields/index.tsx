@@ -87,7 +87,7 @@ export function FormRegisterFields() {
         inputType="email"
       />
 
-      <label className="relative [&_input]:pr-[2.8rem] [&_button]:right-4 [&_button]:top-10 [&_button_svg]:w-6 [&_button_svg]:h-6 [&_.eye-visibility]:top-1/2 [&_.eye-visibility]:-translate-y-1/2">
+      <label className="relative [&_input]:pr-[2.8rem] [&_button]:right-4 [&_button]:top-10 [&_button_svg]:w-6 [&_button_svg]:h-6">
         <InfoTooltip right={0} />
         <Field
           as={InputForm}
@@ -102,11 +102,10 @@ export function FormRegisterFields() {
           aria-label="Mostrar senha"
           pressed={isPasswordVisible}
           onPressedChange={setIsPasswordVisible}
-          className="eye-visibility"
         />
       </label>
 
-      <label className="relative [&_input]:pr-[2.8rem] [&_button]:right-4 [&_button]:top-10 [&_button_svg]:w-6 [&_button_svg]:h-6 [&_.eye-visibility]:top-1/2 [&_.eye-visibility]:-translate-y-1/2">
+      <label className="relative [&_input]:pr-[2.8rem] [&_button]:right-4 [&_button]:top-10 [&_button_svg]:w-6 [&_button_svg]:h-6">
         <Field
           as={InputForm}
           type="input"
@@ -120,7 +119,6 @@ export function FormRegisterFields() {
           aria-label="Mostrar confirmação da senha"
           pressed={isConfirmPasswordVisible}
           onPressedChange={setIsConfirmPasswordVisible}
-          className="eye-visibility"
         />
       </label>
     </>
