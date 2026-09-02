@@ -2,6 +2,7 @@
 
 import { updateCalendlyInfo } from '@/features/account/actions/actions';
 import { ModalCancelKeepRoute } from '@/features/account/components/modal-cancel-keep-route';
+import { ModalConfirm } from '@/features/account/components/modal-confirm';
 import { Button } from '@/shared/components/button';
 import { Modal } from '@/shared/components/modal';
 import { Spinner } from '@/shared/components/spinner';
@@ -34,6 +35,7 @@ export function ScheduleTab({ mentor, calendlyInfo }: ScheduleTabProps) {
   const [inputValue, setInputValue] = useState('');
   const [savedInputValue, setSavedInputValue] = useState('');
   const [openWarningModal, setOpenWarningModal] = useState(false);
+  const [openConfirmModal, setOpenConfirmModal] = useState(false);
 
   const router = useRouter();
 
@@ -90,8 +92,13 @@ export function ScheduleTab({ mentor, calendlyInfo }: ScheduleTabProps) {
       },
     });
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (isButtonDisabled) return;
+    setOpenConfirmModal(true);
+  };
+
+  const handleConfirmSave = async () => {
     setIsLoading(true);
     try {
       if (inputValue.trim() === '') {
@@ -235,6 +242,17 @@ export function ScheduleTab({ mentor, calendlyInfo }: ScheduleTabProps) {
               onOpenChange={() => setOpenWarningModal(false)}
             >
               <ModalCancelKeepRoute handleDiscard={handleDiscard} />
+            </Modal.Root>
+
+            <Modal.Root
+              open={openConfirmModal}
+              onOpenChange={() => setOpenConfirmModal(false)}
+            >
+              <ModalConfirm
+                title="Deseja realmente alterar o link da agenda?"
+                description="O link antigo será substituído."
+                onConfirm={handleConfirmSave}
+              />
             </Modal.Root>
 
             {isLoading ? (
