@@ -2,9 +2,9 @@
 
 import { updateCalendlyInfo } from '@/features/account/actions/actions';
 import { ModalCancelKeepRoute } from '@/features/account/components/modal-cancel-keep-route';
+import { ModalConfirm } from '@/features/account/components/modal-confirm';
 import { Button } from '@/shared/components/button';
 import { Modal } from '@/shared/components/modal';
-import { ModalConfirm } from '@/shared/components/modal-confirm';
 import { Spinner } from '@/shared/components/spinner';
 
 import { IMentor } from '@/shared/types/Auth';
