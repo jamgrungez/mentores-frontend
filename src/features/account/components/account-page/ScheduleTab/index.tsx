@@ -2,9 +2,9 @@
 
 import { updateCalendlyInfo } from '@/features/account/actions/actions';
 import { ModalCancelKeepRoute } from '@/features/account/components/modal-cancel-keep-route';
-import { ModalConfirm } from '@/features/account/components/modal-confirm';
 import { Button } from '@/shared/components/button';
 import { Modal } from '@/shared/components/modal';
+import { ModalConfirm } from '@/shared/components/modal-confirm';
 import { Spinner } from '@/shared/components/spinner';
 
 import { IMentor } from '@/shared/types/Auth';
@@ -207,7 +207,7 @@ export function ScheduleTab({ mentor, calendlyInfo }: ScheduleTabProps) {
             />
             <label
               htmlFor="link-calendly"
-              className="absolute left-2 leading-[1.4rem] font-normal bg-white transition-all duration-300 pointer-events-none pl-3"
+              className="absolute -top-2.5 left-3 bg-white px-1 text-sm leading-none font-normal text-gray-700 pointer-events-none"
             >
               Link da agenda do Calendly
             </label>
