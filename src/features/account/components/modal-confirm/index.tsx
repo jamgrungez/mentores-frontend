@@ -1,10 +1,9 @@
 import { Button } from '@/shared/components/button';
 import { Modal } from '@/shared/components/modal';
-import { ReactNode } from 'react';
 
 interface ModalConfirmProps extends React.HTMLAttributes<HTMLDivElement> {
-  title: ReactNode;
-  description?: ReactNode;
+  title: string;
+  description?: string;
   confirmLabel?: string;
   cancelLabel?: string;
   onConfirm: () => void;
