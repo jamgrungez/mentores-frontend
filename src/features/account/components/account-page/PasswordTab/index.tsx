@@ -97,6 +97,8 @@ export function PasswordTab() {
       formik.resetForm();
       router.refresh();
       toastMessageSuccess('Alterações salvas');
+    } catch {
+      handleError('Algum erro aconteceu. Entre em contato com a gente.');
     } finally {
       setIsLoading(false);
     }
